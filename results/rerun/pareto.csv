@@ -1,0 +1,11 @@
+name,total_kb,ipc,status
+size_l3_4m,4384,0.343799,pareto-optimal
+size_l2_128k,8352,0.337421,dominated
+size_l1_16k,8464,0.343568,dominated
+size_base,8480,0.343799,dominated
+size_l1_64k,8512,0.344518,pareto-optimal
+size_l1_128k,8576,0.346585,pareto-optimal
+size_l2_512k,8736,0.35733,knee
+size_l2_1m,9248,0.381226,pareto-optimal
+size_l3_16m,16672,0.343799,dominated
+size_l3_32m,33056,0.343799,dominated

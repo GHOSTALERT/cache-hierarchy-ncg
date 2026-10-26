@@ -1,0 +1,441 @@
+============================================================
+FILE: SA-BASE-EXP1L1-2L2-8L3-16.txt
+EXPERIMENT: EXP1 (BASE — L1=2KB, L2=8KB, L3=16KB)
+============================================================
+
+1. CORE PERFORMANCE METRICS
+   IPC (system.cpu.ipc)                        : 0.190288
+   CPI (system.cpu.cpi)                        : 5.255183
+   NumCycles (system.cpu.numCycles)            : 262759146
+
+2. INSTRUCTION COUNT
+   simInsts                                    : 50000000
+
+3. MEMORY INTENSITY
+   numMemRefs                                  : 11426206
+   numInsts                                    : 50000000
+   Memory Intensity (numMemRefs / numInsts)    : 0.228524
+
+4. L1 DATA CACHE (dcache)
+   dcache.demandMissRate::total                : 0.872830
+   dcache.demandHits::total                    : 1453067
+   dcache.demandMisses::total                  : 9973125
+
+5. L1 INSTRUCTION CACHE (icache)
+   icache.demandMissRate::total                : 0.000005
+
+6. MISS LATENCY
+   dcache.demandAvgMissLatency::total          : 16021.372840
+
+7. REPLACEMENTS
+   dcache.replacements                         : 9972614
+
+8. LOAD vs STORE BEHAVIOR
+   numLoadInsts                                : 11413285
+   numStoreInsts                               : 12921
+
+9. READ/WRITE MISS RATES
+   dcache.ReadReq.missRate::total              : 0.873718
+   dcache.WriteReq.missRate::total             : 0.088142
+
+10. CACHE OCCUPANCY
+    dcache.tags.avgOccs::total                 : 0.999475
+
+
+============================================================
+FILE: SA-EXP2L1-1.txt
+EXPERIMENT: EXP2 (L1=1KB)
+============================================================
+
+1. CORE PERFORMANCE METRICS
+   IPC                                         : 0.205915
+   CPI                                         : 4.856368
+   NumCycles                                   : 242818385
+
+2. INSTRUCTION COUNT
+   simInsts                                    : 50000000
+
+3. MEMORY INTENSITY
+   numMemRefs                                  : 11426206
+   numInsts                                    : 50000000
+   Memory Intensity (numMemRefs / numInsts)    : 0.228524
+
+4. L1 DATA CACHE (dcache)
+   dcache.demandMissRate::total                : 0.748170
+   dcache.demandHits::total                    : 2877462
+   dcache.demandMisses::total                  : 8548730
+
+5. L1 INSTRUCTION CACHE (icache)
+   icache.demandMissRate::total                : 0.000005
+
+6. MISS LATENCY
+   dcache.demandAvgMissLatency::total          : 16024.993069
+
+7. REPLACEMENTS
+   dcache.replacements                         : 8548219
+
+8. LOAD vs STORE BEHAVIOR
+   numLoadInsts                                : 11413285
+   numStoreInsts                               : 12921
+
+9. READ/WRITE MISS RATES
+   dcache.ReadReq.missRate::total              : 0.748915
+   dcache.WriteReq.missRate::total             : 0.089459
+
+10. CACHE OCCUPANCY
+    dcache.tags.avgOccs::total                 : 0.999308
+
+
+============================================================
+FILE: SA-EXP3L1-4.txt
+EXPERIMENT: EXP3 (L1=4KB)
+============================================================
+
+1. CORE PERFORMANCE METRICS
+   IPC                                         : 0.190288
+   CPI                                         : 5.255183
+   NumCycles                                   : 262759146
+
+2. INSTRUCTION COUNT
+   simInsts                                    : 50000000
+
+3. MEMORY INTENSITY
+   numMemRefs                                  : 11426206
+   numInsts                                    : 50000000
+   Memory Intensity (numMemRefs / numInsts)    : 0.228524
+
+4. L1 DATA CACHE (dcache)
+   dcache.demandMissRate::total                : 0.872830
+   dcache.demandHits::total                    : 1453068
+   dcache.demandMisses::total                  : 9973124
+
+5. L1 INSTRUCTION CACHE (icache)
+   icache.demandMissRate::total                : 0.000005
+
+6. MISS LATENCY
+   dcache.demandAvgMissLatency::total          : 16021.374245
+
+7. REPLACEMENTS
+   dcache.replacements                         : 9972613
+
+8. LOAD vs STORE BEHAVIOR
+   numLoadInsts                                : 11413285
+   numStoreInsts                               : 12921
+
+9. READ/WRITE MISS RATES
+   dcache.ReadReq.missRate::total              : 0.873718
+   dcache.WriteReq.missRate::total             : 0.088142
+
+10. CACHE OCCUPANCY
+    dcache.tags.avgOccs::total                 : 0.999536
+
+
+============================================================
+FILE: SA-EXP4L1-8.txt
+EXPERIMENT: EXP4 (L1=8KB)
+============================================================
+
+1. CORE PERFORMANCE METRICS
+   IPC                                         : 0.405965
+   CPI                                         : 2.463267
+   NumCycles                                   : 123163354
+
+2. INSTRUCTION COUNT
+   simInsts                                    : 50000000
+
+3. MEMORY INTENSITY
+   numMemRefs                                  : 11426206
+   numInsts                                    : 50000000
+   Memory Intensity (numMemRefs / numInsts)    : 0.228524
+
+4. L1 DATA CACHE (dcache)
+   dcache.demandMissRate::total                : 0.000175
+   dcache.demandHits::total                    : 11424194
+   dcache.demandMisses::total                  : 1998
+
+5. L1 INSTRUCTION CACHE (icache)
+   icache.demandMissRate::total                : 0.000005
+
+6. MISS LATENCY
+   dcache.demandAvgMissLatency::total          : 122676.676677
+
+7. REPLACEMENTS
+   dcache.replacements                         : 1487
+
+8. LOAD vs STORE BEHAVIOR
+   numLoadInsts                                : 11413285
+   numStoreInsts                               : 12921
+
+9. READ/WRITE MISS RATES
+   dcache.ReadReq.missRate::total              : 0.000075
+   dcache.WriteReq.missRate::total             : 0.088142
+
+10. CACHE OCCUPANCY
+    dcache.tags.avgOccs::total                 : 0.999068
+
+
+============================================================
+FILE: SA-EXP5L1-16.txt
+EXPERIMENT: EXP5 (L1=16KB)
+============================================================
+
+1. CORE PERFORMANCE METRICS
+   IPC                                         : 0.405965
+   CPI                                         : 2.463267
+   NumCycles                                   : 123163326
+
+2. INSTRUCTION COUNT
+   simInsts                                    : 50000000
+
+3. MEMORY INTENSITY
+   numMemRefs                                  : 11426206
+   numInsts                                    : 50000000
+   Memory Intensity (numMemRefs / numInsts)    : 0.228524
+
+4. L1 DATA CACHE (dcache)
+   dcache.demandMissRate::total                : 0.000175
+   dcache.demandHits::total                    : 11424196
+   dcache.demandMisses::total                  : 1996
+
+5. L1 INSTRUCTION CACHE (icache)
+   icache.demandMissRate::total                : 0.000005
+
+6. MISS LATENCY
+   dcache.demandAvgMissLatency::total          : 122783.567134
+
+7. REPLACEMENTS
+   dcache.replacements                         : 1485
+
+8. LOAD vs STORE BEHAVIOR
+   numLoadInsts                                : 11413285
+   numStoreInsts                               : 12921
+
+9. READ/WRITE MISS RATES
+   dcache.ReadReq.missRate::total              : 0.000075
+   dcache.WriteReq.missRate::total             : 0.088142
+
+10. CACHE OCCUPANCY
+    dcache.tags.avgOccs::total                 : 0.999102
+
+
+============================================================
+FILE: SA-EXP6-L2-1.txt
+EXPERIMENT: EXP6 (L2=1KB)
+============================================================
+
+1. CORE PERFORMANCE METRICS
+   IPC                                         : 0.190288
+   CPI                                         : 5.255183
+   NumCycles                                   : 262759146
+
+2. INSTRUCTION COUNT
+   simInsts                                    : 50000000
+
+3. MEMORY INTENSITY
+   numMemRefs                                  : 11426206
+   numInsts                                    : 50000000
+   Memory Intensity (numMemRefs / numInsts)    : 0.228524
+
+4. L1 DATA CACHE (dcache)
+   dcache.demandMissRate::total                : 0.872830
+   dcache.demandHits::total                    : 1453067
+   dcache.demandMisses::total                  : 9973125
+
+5. L1 INSTRUCTION CACHE (icache)
+   icache.demandMissRate::total                : 0.000005
+
+6. MISS LATENCY
+   dcache.demandAvgMissLatency::total          : 16021.372840
+
+7. REPLACEMENTS
+   dcache.replacements                         : 9972614
+
+8. LOAD vs STORE BEHAVIOR
+   numLoadInsts                                : 11413285
+   numStoreInsts                               : 12921
+
+9. READ/WRITE MISS RATES
+   dcache.ReadReq.missRate::total              : 0.873718
+   dcache.WriteReq.missRate::total             : 0.088142
+
+10. CACHE OCCUPANCY
+    dcache.tags.avgOccs::total                 : 0.999475
+
+
+============================================================
+FILE: SA-EXP6-L2-2.txt
+EXPERIMENT: EXP6 (L2=2KB)
+============================================================
+
+1. CORE PERFORMANCE METRICS
+   IPC                                         : 0.190288
+   CPI                                         : 5.255183
+   NumCycles                                   : 262759146
+
+2. INSTRUCTION COUNT
+   simInsts                                    : 50000000
+
+3. MEMORY INTENSITY
+   numMemRefs                                  : 11426206
+   numInsts                                    : 50000000
+   Memory Intensity (numMemRefs / numInsts)    : 0.228524
+
+4. L1 DATA CACHE (dcache)
+   dcache.demandMissRate::total                : 0.872830
+   dcache.demandHits::total                    : 1453067
+   dcache.demandMisses::total                  : 9973125
+
+5. L1 INSTRUCTION CACHE (icache)
+   icache.demandMissRate::total                : 0.000005
+
+6. MISS LATENCY
+   dcache.demandAvgMissLatency::total          : 16021.372840
+
+7. REPLACEMENTS
+   dcache.replacements                         : 9972614
+
+8. LOAD vs STORE BEHAVIOR
+   numLoadInsts                                : 11413285
+   numStoreInsts                               : 12921
+
+9. READ/WRITE MISS RATES
+   dcache.ReadReq.missRate::total              : 0.873718
+   dcache.WriteReq.missRate::total             : 0.088142
+
+10. CACHE OCCUPANCY
+    dcache.tags.avgOccs::total                 : 0.999475
+
+
+============================================================
+FILE: SA-EXP8-L2-4.txt
+EXPERIMENT: EXP8 (L2=4KB)
+============================================================
+
+1. CORE PERFORMANCE METRICS
+   IPC                                         : 0.190288
+   CPI                                         : 5.255183
+   NumCycles                                   : 262759146
+
+2. INSTRUCTION COUNT
+   simInsts                                    : 50000000
+
+3. MEMORY INTENSITY
+   numMemRefs                                  : 11426206
+   numInsts                                    : 50000000
+   Memory Intensity (numMemRefs / numInsts)    : 0.228524
+
+4. L1 DATA CACHE (dcache)
+   dcache.demandMissRate::total                : 0.872830
+   dcache.demandHits::total                    : 1453067
+   dcache.demandMisses::total                  : 9973125
+
+5. L1 INSTRUCTION CACHE (icache)
+   icache.demandMissRate::total                : 0.000005
+
+6. MISS LATENCY
+   dcache.demandAvgMissLatency::total          : 16021.372840
+
+7. REPLACEMENTS
+   dcache.replacements                         : 9972614
+
+8. LOAD vs STORE BEHAVIOR
+   numLoadInsts                                : 11413285
+   numStoreInsts                               : 12921
+
+9. READ/WRITE MISS RATES
+   dcache.ReadReq.missRate::total              : 0.873718
+   dcache.WriteReq.missRate::total             : 0.088142
+
+10. CACHE OCCUPANCY
+    dcache.tags.avgOccs::total                 : 0.999475
+
+
+============================================================
+FILE: SA-EXP9-L2-16.txt
+EXPERIMENT: EXP9 (L2=16KB)
+============================================================
+
+1. CORE PERFORMANCE METRICS
+   IPC                                         : 0.190288
+   CPI                                         : 5.255183
+   NumCycles                                   : 262759146
+
+2. INSTRUCTION COUNT
+   simInsts                                    : 50000000
+
+3. MEMORY INTENSITY
+   numMemRefs                                  : 11426206
+   numInsts                                    : 50000000
+   Memory Intensity (numMemRefs / numInsts)    : 0.228524
+
+4. L1 DATA CACHE (dcache)
+   dcache.demandMissRate::total                : 0.872830
+   dcache.demandHits::total                    : 1453067
+   dcache.demandMisses::total                  : 9973125
+
+5. L1 INSTRUCTION CACHE (icache)
+   icache.demandMissRate::total                : 0.000005
+
+6. MISS LATENCY
+   dcache.demandAvgMissLatency::total          : 16021.372840
+
+7. REPLACEMENTS
+   dcache.replacements                         : 9972614
+
+8. LOAD vs STORE BEHAVIOR
+   numLoadInsts                                : 11413285
+   numStoreInsts                               : 12921
+
+9. READ/WRITE MISS RATES
+   dcache.ReadReq.missRate::total              : 0.873718
+   dcache.WriteReq.missRate::total             : 0.088142
+
+10. CACHE OCCUPANCY
+    dcache.tags.avgOccs::total                 : 0.999475
+
+
+============================================================
+FILE: SA-EXP10-L3-1.txt  /  SA-EXP11-L3-2.txt  /  SA-EXP12-L3-4.txt
+     SA-EXP13-L3-8.txt   /  SA-EXP14-L3-32.txt
+EXPERIMENTS: EXP10 (L3=1KB) through EXP14 (L3=32KB)
+NOTE: All five L3-variation files produce identical L1 dcache values
+      (L3 size does not change the L1 dcache behaviour in this workload)
+============================================================
+
+1. CORE PERFORMANCE METRICS
+   IPC                                         : 0.190288
+   CPI                                         : 5.255183
+   NumCycles                                   : 262759146
+
+2. INSTRUCTION COUNT
+   simInsts                                    : 50000000
+
+3. MEMORY INTENSITY
+   numMemRefs                                  : 11426206
+   numInsts                                    : 50000000
+   Memory Intensity (numMemRefs / numInsts)    : 0.228524
+
+4. L1 DATA CACHE (dcache)
+   dcache.demandMissRate::total                : 0.872830
+   dcache.demandHits::total                    : 1453067
+   dcache.demandMisses::total                  : 9973125
+
+5. L1 INSTRUCTION CACHE (icache)
+   icache.demandMissRate::total                : 0.000005
+
+6. MISS LATENCY
+   dcache.demandAvgMissLatency::total          : 16021.372840
+
+7. REPLACEMENTS
+   dcache.replacements                         : 9972614
+
+8. LOAD vs STORE BEHAVIOR
+   numLoadInsts                                : 11413285
+   numStoreInsts                               : 12921
+
+9. READ/WRITE MISS RATES
+   dcache.ReadReq.missRate::total              : 0.873718
+   dcache.WriteReq.missRate::total             : 0.088142
+
+10. CACHE OCCUPANCY
+    dcache.tags.avgOccs::total                 : 0.999475

@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+benchmarks/bin/
+.gem5_arm_build.log
+.~lock.*#
+.tools/

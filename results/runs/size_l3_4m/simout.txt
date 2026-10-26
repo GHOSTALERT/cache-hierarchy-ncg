@@ -1,0 +1,25 @@
+/home/deleted-user/gem5/build/ARM/gem5.opt --outdir=/home/deleted-user/Downloads/compArchProj/results/runs/size_l3_4m /home/deleted-user/Downloads/compArchProj/configs/three_level.py --binary /home/deleted-user/Downloads/compArchProj/benchmarks/bin/cache_size_sweep --l1-size 32KiB --l1-assoc 2 --l2-size 256KiB --l2-assoc 8 --l3-size 4MiB --l3-assoc 16
+
+Global frequency set at 1000000000000 ticks per second
+warn: No dot file generated. Please install pydot to generate the dot file and pdf.
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (16384 Mbytes) does not match the address range assigned (512 Mbytes)
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+src/base/remote_gdb.cc:418: warn: Sockets disabled, not accepting gdb connections
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.0
+gem5 compiled Oct 26 2026 21:02:02
+gem5 started Oct 26 2026 21:05:32
+gem5 executing on Nobody, pid 62573
+command line: /home/deleted-user/gem5/build/ARM/gem5.opt --outdir=/home/deleted-user/Downloads/compArchProj/results/runs/size_l3_4m /home/deleted-user/Downloads/compArchProj/configs/three_level.py --binary /home/deleted-user/Downloads/compArchProj/benchmarks/bin/cache_size_sweep --l1-size 32KiB --l1-assoc 2 --l2-size 256KiB --l2-assoc 8 --l3-size 4MiB --l3-assoc 16
+
+info: Standard input is not a terminal, disabling listeners.
+src/sim/syscall_emul.cc:86: warn: ignoring syscall set_robust_list(...)
+src/sim/syscall_emul.cc:97: warn: ignoring syscall rseq(...)
+      (further warnings will be suppressed)
+src/sim/mem_state.cc:443: info: Increasing stack size by one page.
+src/sim/syscall_emul.hh:1127: warn: readlink() called on '/proc/self/exe' may yield unexpected results in various settings.
+      Returning '/home/deleted-user/Downloads/compArchProj/benchmarks/bin/cache_size_sweep'
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+Exiting @ tick 145433612000 because a thread reached the max instruction count

@@ -1,0 +1,241 @@
+L1 - 32KB - EXP1
+1. Core Performance Metrics
+IPC = 0.166133
+CPI = 6.019286
+NumCycles = 300964301
+
+2. Instruction Count
+simInsts = 50000000
+
+3. Memory Intensity
+numMemRefs = 12495799
+numInsts = 50000000
+memoryIntensity = 0.2499
+
+4. L1 Data Cache
+dcache.demandHits = 10954870
+dcache.demandMisses = 1540911
+dcache.demandMissRate = 0.123315
+
+5. L1 Instr Cache
+icache.demandMissRate = 0.000005
+
+6. Miss Latency
+dcache.demandAvgMissLatency = 99938.936
+
+7. Replacements
+dcache.replacements = 1540396
+
+8. Load vs Store
+numLoadInsts = 4100538
+numStoreInsts = 8395261
+
+9. ReadReq / WriteReq
+ReadReq.missRate = 0.120008
+WriteReq.missRate = 0.124930
+
+10. Cache Occupancy
+dcache.tags.avgOccs = 0.999534
+
+11. AMAT
+AMAT = hit time + (0.123315 * 99938.936)
+
+
+L1 - 16KB - EXP2
+1. Core Performance Metrics
+IPC = 0.166054
+CPI = 6.022155
+NumCycles = 301107737
+
+2. Instruction Count
+simInsts = 50000000
+
+3. Memory Intensity
+numMemRefs = 12495799
+numInsts = 50000000
+memoryIntensity = 0.2499
+
+4. L1 Data Cache
+dcache.demandHits = 10944564
+dcache.demandMisses = 1551217
+dcache.demandMissRate = 0.124139
+
+5. L1 Instr Cache
+icache.demandMissRate = 0.000006
+
+6. Miss Latency
+dcache.demandAvgMissLatency = 99379.944
+
+7. Replacements
+dcache.replacements = 1550958
+
+8. Load vs Store
+numLoadInsts = 4100538
+numStoreInsts = 8395261
+
+9. ReadReq / WriteReq
+ReadReq.missRate = 0.122516
+WriteReq.missRate = 0.124932
+
+10. Cache Occupancy
+dcache.tags.avgOccs = 0.999787
+
+11. AMAT
+AMAT = hit time + (0.124139 * 99379.944)
+
+
+L1 - 64KB - EXP3
+1. Core Performance Metrics
+IPC = 0.166292
+CPI = 6.013524
+NumCycles = 300676225
+
+2. Instruction Count
+simInsts = 50000000
+
+3. Memory Intensity
+numMemRefs = 12495799
+numInsts = 50000000
+memoryIntensity = 0.2499
+
+4. L1 Data Cache
+dcache.demandHits = 10975431
+dcache.demandMisses = 1520350
+dcache.demandMissRate = 0.121669
+
+5. L1 Instr Cache
+icache.demandMissRate = 0.000005
+
+6. Miss Latency
+dcache.demandAvgMissLatency = 101074.07
+
+7. Replacements
+dcache.replacements = 1519323
+
+8. Load vs Store
+numLoadInsts = 4100538
+numStoreInsts = 8395261
+
+9. ReadReq / WriteReq
+ReadReq.missRate = 0.114998
+WriteReq.missRate = 0.124927
+
+10. Cache Occupancy
+dcache.tags.avgOccs = 0.999128
+
+11. AMAT
+AMAT = hit time + (0.121669 * 101074.07)
+
+
+L1 - 128KB - EXP4
+1. Core Performance Metrics
+IPC = 0.166608
+CPI = 6.002131
+NumCycles = 300106535
+
+2. Instruction Count
+simInsts = 50000000
+
+3. Memory Intensity
+numMemRefs = 12495799
+numInsts = 50000000
+memoryIntensity = 0.2499
+
+4. L1 Data Cache
+dcache.demandHits = 11016470
+dcache.demandMisses = 1479311
+dcache.demandMissRate = 0.118385
+
+5. L1 Instr Cache
+icache.demandMissRate = 0.000005
+
+6. Miss Latency
+dcache.demandAvgMissLatency = 103437.48
+
+7. Replacements
+dcache.replacements = 1477260
+
+8. Load vs Store
+numLoadInsts = 4100538
+numStoreInsts = 8395261
+
+9. ReadReq / WriteReq
+ReadReq.missRate = 0.104995
+WriteReq.missRate = 0.124925
+
+10. Cache Occupancy
+dcache.tags.avgOccs = 0.998577
+
+11. AMAT
+AMAT = hit time + (0.118385 * 103437.48)
+
+
+L2 - 128KB - EXP5
+IPC = 0.164698
+CPI = 6.071736
+NumCycles = 303586806
+simInsts = 50,000,000
+numMemRefs = 12,495,799
+Memory Intensity ≈ 0.2499
+numLoadInsts = 4,100,538
+numStoreInsts = 8,395,261
+
+
+
+L2 - 512KB - EXP6
+IPC = 0.169080
+CPI = 5.914374
+NumCycles = 295718676
+simInsts = 50,000,000
+numMemRefs = 12,495,799
+Memory Intensity ≈ 0.2499
+numLoadInsts = 4,100,538
+numStoreInsts = 8,395,261
+
+
+
+L2 - 1MB - EXP7
+IPC = 0.172205
+CPI = 5.807030
+NumCycles = 290351505
+simInsts = 50,000,000
+numMemRefs = 12,495,799
+Memory Intensity ≈ 0.2499
+numLoadInsts = 4,100,538
+numStoreInsts = 8,395,261
+
+
+L3 - 4MB - EXP8
+IPC = 0.165922
+CPI = 6.026911
+NumCycles = 301345562
+simInsts = 50,000,000
+numMemRefs = 12,495,799
+Memory Intensity ≈ 0.2499
+numLoadInsts = 4,100,538
+numStoreInsts = 8,395,261
+
+
+L3 - 16MB - EXP9
+IPC = 0.166557
+CPI = 6.003961
+NumCycles = 300198054
+simInsts = 50,000,000
+numMemRefs = 12,495,799
+Memory Intensity ≈ 0.2499
+numLoadInsts = 4,100,538
+numStoreInsts = 8,395,261
+
+
+
+L3 - 32MB - EXP10
+IPC = 0.167413
+CPI = 5.973243
+NumCycles = 298662137
+simInsts = 50,000,000
+numMemRefs = 12,495,799
+Memory Intensity ≈ 0.2499
+numLoadInsts = 4,100,538
+numStoreInsts = 8,395,261
+
+
