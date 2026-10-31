@@ -7,6 +7,7 @@ A gem5 study of L1/L2/L3 size and associativity: 24 simulated configurations, a 
 ![Python](https://img.shields.io/badge/analysis-Python%20%2B%20matplotlib-3776ab)
 ![Configurations](https://img.shields.io/badge/configurations-24-555)
 ![Course](https://img.shields.io/badge/VIT-BEVD207L%20Computer%20Architecture-1e3a8a)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
 <p align="center">
   <img src="results/rerun/figures/pareto.png" alt="IPC vs total cache area with the Pareto frontier" width="720"><br>
@@ -91,3 +92,7 @@ BEVD207L Computer Architecture, VIT Vellore. Supervisor: Vikas Vijayvargiya.
 | Gavin Fernandez | 24BVD0083 |
 | Ashutosh | 24BVD0065 |
 | Varun V Nair | 24BVD0061 |
+
+## License
+
+Released under the [MIT License](LICENSE).
