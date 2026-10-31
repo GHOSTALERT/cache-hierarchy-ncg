@@ -1,79 +1,93 @@
 # Cache Hierarchy Performance Analysis: Normalized Cache Gain and Pareto-Optimal Design
 
-BEVD207L Computer Architecture project. Team: Arrnav Trisal (24BVD0064), Gavin Fernandez (24BVD0083), Ashutosh (24BVD0065), Varun V Nair (24BVD0061). Supervisor: Vikas Vijayvargiya.
+**How much performance does each kilobyte of cache buy, and where should you stop adding cache?**
+A gem5 study of L1/L2/L3 size and associativity: 24 simulated configurations, a new *Normalized Cache Gain* metric and a Pareto frontier of IPC against cache area.
 
-We used gem5 to study how L1, L2 and L3 cache **size** and **set associativity** affect IPC, CPI, miss rate, miss latency and execution time.
-The project adds two analysis tools:
+![gem5](https://img.shields.io/badge/gem5-v25.1%20ARM-0b7285)
+![Python](https://img.shields.io/badge/analysis-Python%20%2B%20matplotlib-3776ab)
+![Configurations](https://img.shields.io/badge/configurations-24-555)
+![Course](https://img.shields.io/badge/VIT-BEVD207L%20Computer%20Architecture-1e3a8a)
 
-- **Normalized Cache Gain (NCG)** = ΔIPC / ΔCacheSize (IPC per KB): the performance gained for each kilobyte of cache added.
-- **Pareto frontier** of IPC against total cache area (L1+L2+L3). Its knee is the most cost-efficient design.
+<p align="center">
+  <img src="results/rerun/figures/pareto.png" alt="IPC vs total cache area with the Pareto frontier" width="720"><br>
+  <em>IPC against total cache area. The circled knee (L1 32 KB / L2 512 KB / L3 8 MiB) reaches 94 % of peak IPC at 26 % of the largest design's area.</em>
+</p>
 
-The submitted report is in [`report/Cache_Hierarchy_NCG_Pareto_Report.pdf`](report/Cache_Hierarchy_NCG_Pareto_Report.pdf).
-The team's raw gem5 output is in [`original/stats/`](original/).
-This repo also contains a full, scripted re-run of the study. Results are in [`results/`](results/) and the comparison with the report is in [`docs/RESULTS.md`](docs/RESULTS.md).
+## Why this project
 
-## Setup
+Bigger caches always help a little, but cache is the most area-hungry part of a chip. A plain IPC-vs-size table doesn't tell you *which* level to grow or when to stop. This project adds two tools to the usual gem5 sweep:
 
-| | |
+- **Normalized Cache Gain (NCG)** = ΔIPC / ΔCacheSize, in IPC per KB. It measures the performance gained for each kilobyte of cache added at each level.
+- **A Pareto frontier** of IPC against total cache area (L1+L2+L3). Its knee is the most cost-efficient design.
+
+## Key findings
+
+| Finding | Result |
+|---|---|
+| Best place to spend cache area | **L2**: highest NCG of any level, peaking at the 256 → 512 KB step |
+| Pareto knee | **L1 32 KB / L2 512 KB / L3 8 MiB**: 94 % of peak IPC at 26 % of the maximum area |
+| L1 associativity threshold | Going to **8-way** removes the conflict misses: IPC 0.20 → 0.42, L1 miss rate 99.8 % → 0.02 %, replacements 9.3 M → 1,439 |
+| "Miss-latency paradox" | Larger L2 has *lower* miss rate (90.8 % → 4.4 %) but *higher* average miss latency (46 → 96 cycles), because only the hardest misses remain |
+| L3 | Negligible NCG for these working sets |
+
+Every finding in the submitted report was reproduced by a fully scripted re-run, except one minor effect. The comparison, and four corrections to the original report (latency units, which gem5 statistic to use, physical indexing in SE mode), are in [`docs/RESULTS.md`](docs/RESULTS.md).
+
+## How it works
+
+```
+benchmarks/*.c ──► gem5 (ARM, SE mode) ──► stats.txt ──► parse_ncg.py ──► NCG, Pareto, tables
+ size sweep         TimingSimpleCPU 1 GHz     24 runs        IPC, CPI, miss     plot_results.py
+ assoc conflict     L1I/L1D, L2, L3, DDR4                    rate, latency      ──► figures
+```
+
+| | Baseline system |
 |---|---|
 | Simulator | gem5 v25.1, ARM ISA, Syscall-Emulation mode |
-| CPU | TimingSimpleCPU @ 1 GHz, exactly 50M instructions per run |
-| Memory | DDR4-2400 (8x8), 512 MiB |
-| L1I / L1D | 32 KiB, 2-way, 2-cycle tag/data, 4 MSHRs |
-| L2 | 256 KiB, 8-way, 10 cycles, 16 MSHRs |
-| L3 | 8 MiB, 16-way, 20 cycles, 32 MSHRs |
+| CPU | TimingSimpleCPU @ 1 GHz, exactly 50 M instructions per run |
+| L1I / L1D | 32 KiB, 2-way, 2 cycles |
+| L2 | 256 KiB, 8-way, 10 cycles |
+| L3 | 8 MiB, 16-way, 20 cycles |
+| Memory | DDR4-2400, 512 MiB |
 
-| Benchmark | What it does |
-|---|---|
-| `benchmarks/cache_size_sweep.c` | Sequential `sum += arr[i]` over working sets from 4 KiB to 64 MiB (doubling), 20 passes each. Isolates capacity misses. |
-| `benchmarks/assoc_conflict.c` | Round-robin over `FIXED_ASSOC + 4 = 8` lines spaced `L1_SIZE / FIXED_ASSOC` apart, so they share one L1 set. Gives a sharp threshold at 8-way. |
+Two micro-benchmarks isolate the two effects:
 
-Experiments (24 runs) vary one level at a time while the others stay at baseline:
+- **`cache_size_sweep.c`** streams `sum += arr[i]` over working sets from 4 KiB to 64 MiB. It isolates capacity misses.
+- **`assoc_conflict.c`** cycles through 8 lines that map to the same L1 set. It gives a sharp threshold at 8-way.
 
-- **L1 size:** 16 / 32 / 64 / 128 KiB
-- **L2 size:** 128 / 256 / 512 / 1024 KiB
-- **L3 size:** 4 / 8 / 16 / 32 MiB
-- **L1 associativity:** 1 / 2 / 4 / 8 / 16-way
-- **L2 associativity:** 1 / 2 / 4 / 8 / 16-way
-- **L3 associativity:** 1 / 2 / 4 / 8 / 16 / 32-way
+Each experiment varies one level while the others stay at baseline. Sizes: L1 16–128 KiB, L2 128 KiB–1 MiB, L3 4–32 MiB. Associativity: 1 to 16-way (32-way for L3).
 
-## Run it
+<p align="center">
+  <img src="results/comparison/ncg.png" alt="Normalized Cache Gain per level" width="48%">
+  <img src="results/comparison/assoc_ipc.png" alt="IPC vs associativity" width="48%">
+</p>
 
-```bash
-cd ~/Downloads/compArchProj
-
-# 1. One time: Arm cross compiler (no sudo), gem5 ARM build (~1 h), benchmark binaries
-bash scripts/build_gem5_arm.sh                 # gem5 checkout defaults to ~/gem5
-python3 -m venv --without-pip .venv && python3 -m pip --python .venv/bin/python install matplotlib
-
-# 2. Simulate all 24 configurations in parallel (a few minutes on 16 cores)
-.venv/bin/python scripts/run_sweep.py          # --only size_l2_  /  --force  /  --gem5 PATH
-
-# 3. Metrics, NCG and Pareto frontier -> results/rerun/{summary,ncg,pareto}.csv, tables.md
-.venv/bin/python scripts/parse_ncg.py
-.venv/bin/python scripts/parse_ncg.py --source original    # same analysis on the report's raw data
-
-# 4. Figures -> results/rerun/figures, results/original/figures, results/comparison
-.venv/bin/python scripts/plot_results.py
-.venv/bin/python scripts/plot_results.py --source original
-.venv/bin/python scripts/plot_results.py --compare
-```
-
-A single configuration by hand:
-
-```bash
-~/gem5/build/ARM/gem5.opt --outdir=m5out configs/three_level.py \
-    --binary benchmarks/bin/cache_size_sweep --l2-size 512KiB --l1-assoc 8
-```
-
-## Layout
+## Repository layout
 
 ```
-report/       submitted report (PDF)
-original/     the team's original gem5 stats.txt dumps + file-to-experiment map
 benchmarks/   cache_size_sweep.c, assoc_conflict.c, Makefile (static AArch64)
-configs/      three_level.py - gem5 system: TimingSimpleCPU, L1I/L1D, L2, L3, DDR4
+configs/      three_level.py: the gem5 system (CPU, L1I/L1D, L2, L3, DDR4)
 scripts/      experiments.py (the 24 runs), run_sweep.py, parse_ncg.py, plot_results.py, build_gem5_arm.sh
-results/      runs/<name>/ raw gem5 output of the re-run; rerun/, original/, comparison/ tables and figures
-docs/         RESULTS.md - re-run vs. report
+results/      runs/<name>/ raw gem5 output; rerun/, original/, comparison/ tables and figures
+original/     the team's original gem5 stats.txt dumps
+docs/         RESULTS.md (re-run vs report), HOW_TO_RUN.md
+report/       submitted report (PDF)
 ```
+
+## Running it
+
+Building gem5, running the sweep and regenerating every table and figure: see **[docs/HOW_TO_RUN.md](docs/HOW_TO_RUN.md)**.
+
+## Report
+
+[`report/Cache_Hierarchy_NCG_Pareto_Report.pdf`](report/Cache_Hierarchy_NCG_Pareto_Report.pdf): the submitted report.
+
+## Team
+
+BEVD207L Computer Architecture, VIT Vellore. Supervisor: Vikas Vijayvargiya.
+
+| Name | Reg. No. |
+|---|---|
+| Arrnav Trisal | 24BVD0064 |
+| Gavin Fernandez | 24BVD0083 |
+| Ashutosh | 24BVD0065 |
+| Varun V Nair | 24BVD0061 |
